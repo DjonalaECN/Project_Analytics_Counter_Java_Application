@@ -1,13 +1,12 @@
 package com.hemebiotech.analytics;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.TreeMap;
 
 public class AnalyticsCounterProgram {
     ISymptomReader reader;
     ISymptomSort sorter;
+    ISymptomWriter writer;
 
     /**
      * Constructor of the class AnalyticsCounterProgram
@@ -16,6 +15,7 @@ public class AnalyticsCounterProgram {
     public AnalyticsCounterProgram() {
         this.reader = new ReadSymptomDataFromFile("Project02Eclipse/symptoms.txt");
         this.sorter = new SortSymptomData();
+        this.writer = new WriteSymptomToDatafile("result.out");
 
     }
 
@@ -27,5 +27,6 @@ public class AnalyticsCounterProgram {
         TreeMap<String, Integer> listSymptomsClean;
         listSymptoms = (ArrayList<String>) this.reader.GetSymptoms();
         listSymptomsClean = this.sorter.CleanSymptoms(listSymptoms);
+        this.writer.WriteSymptomsFromList(listSymptomsClean);
     }
 }

@@ -1,8 +1,5 @@
 package com.hemebiotech.analytics;
-
 import java.io.IOException;
-import java.util.Iterator;
-import java.util.Set;
 import java.util.TreeMap;
 
 public interface ISymptomWriter {
@@ -12,5 +9,5 @@ public interface ISymptomWriter {
      * The hastable list must have for key the name of symptom and for value the number of recurrences
      * @param listSymptomsClean
      */
-    void WriteSymptomsFromList(TreeMap<String, Integer> listSymptomsClean) throws IOException;
+    void writeSymptomsFromList(TreeMap<String, Integer> listSymptomsClean) throws IOException;
 }

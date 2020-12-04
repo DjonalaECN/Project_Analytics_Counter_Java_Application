@@ -16,7 +16,6 @@ public class AnalyticsCounterProgram {
         this.reader = new ReadSymptomDataFromFile("Project02Eclipse/symptoms.txt");
         this.sorter = new SortSymptomData();
         this.writer = new WriteSymptomToDatafile("result.out");
-
     }
 
     /**
@@ -25,8 +24,8 @@ public class AnalyticsCounterProgram {
     public void start() throws IOException {
         ArrayList<String> listSymptoms;
         TreeMap<String, Integer> listSymptomsClean;
-        listSymptoms = (ArrayList<String>) this.reader.GetSymptoms();
-        listSymptomsClean = this.sorter.CleanSymptoms(listSymptoms);
-        this.writer.WriteSymptomsFromList(listSymptomsClean);
+        listSymptoms = (ArrayList<String>) this.reader.getSymptoms();
+        listSymptomsClean = this.sorter.cleanSymptoms(listSymptoms);
+        this.writer.writeSymptomsFromList(listSymptomsClean);
     }
 }

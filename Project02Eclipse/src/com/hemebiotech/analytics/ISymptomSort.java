@@ -6,7 +6,6 @@ import java.util.TreeMap;
  * For any class who needs to sort symptoms
  */
 public interface ISymptomSort {
-
     /**
      * Function who count & sort by order alphabetical a list of string (symptoms list)
      * @param list
